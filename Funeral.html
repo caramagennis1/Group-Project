@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset = "UTF-8">
+        <meta name = "viewport" content = "width=device-width,initial-scale=1.0">
+        <title>Arcadia</title>
+        <link rel="stylesheet" href="css/ArcadiaCSS.css">
+    </head>
+    <body class="Church-image">
+        <button class="back-button" onclick="window.location.href='Menu.html'">X</button>
+
+        <div id="Text-container" class="Text-container">
+            <p id="text1"></p>
+            <p id="text2"></p>
+            <p id="text3"></p>
+            <p id="text4"></p>
+            <p id="text5"></p>
+            <p id="text6"></p>
+            <p id="text7"></p>
+            <p id="text8"></p>
+            <p id="text9"></p>
+            <p id="text10"></p>
+            <p id="text11"></p>
+            <p id="text12"></p>
+            <p id="text13"></p>
+
+            <div class="restart-container" id="restart-container">
+                <a rel="next" href="menu.html">Back to Home!</a>
+            </div>
+        </div>
+
+        <script>
+        const text1 = "The group arrives at a somber church, their faces etched with awkwardness and guilt. Tiffany’s usual confidence is replaced with uncertainty, Chad’s casual demeanor is gone, and even Sam looks a bit less mysterious today.";
+        const text7 = "As the group walks slowly down the aisle, they pass by Ryan’s parents, who give you guys a death stare, his older brother shooting the finger at you. The coffin sits at the front, draped with flowers."
+        const text10 = "They stand awkwardly at the back of the room as the funeral proceedings continue, unsure of what to do or say. Ryan’s ghost, visible in the corner of the room, who is mouthing obscenities at you.";
+        const text11 = "Gulp.";
+        const text13 = "Ryan’s ghost steals your soul :p";
+
+        function typeText(elementId, text, delay = 50) {
+            let i = 0;
+            function typing() {
+                if (i < text.length) {
+                    document.getElementById(elementId).innerHTML += text[i];
+                    i++;
+                    setTimeout(typing, delay);
+                }
+            }
+            typing();
+        }
+
+        function displayText() {
+            setTimeout(() => {
+                document.getElementById("text1").textContent = text1;
+                setTimeout(() => {
+                    typeText("text2", "Tiffany: I… I didn’t expect it to feel like this. I thought we’d just get over it and go back to normal, you know?", 50);
+                    setTimeout(() => {
+                        typeText("text3", "Chad :Yeah, I didn’t think it would actually hit me like this… It’s just... Ryan was that guy, you know? The one who never shut up about games. Who knew he’d be gone just like that?", 50);
+                        setTimeout(() => {
+                            typeText("text4", "Sam (stoically, staring at the coffin): Sometimes, we forget how fragile everything is. But we can't change it now.", 60);
+                            setTimeout(() => {
+                        typeText("text5", "User: I feel terrible, I could’ve done something. ", 50);
+                        setTimeout(() => {
+                            typeText("text6", "Yes (user), you could have!!!", 60);
+                            setTimeout(() => {
+                                document.getElementById("text7").textContent = text7;
+                            setTimeout(() => {
+                        typeText("text8", "Tiffany (trying to lighten the mood awkwardly, smiling a little): Maybe he’s living his gaming fantasy… in the afterlife?", 50);
+                        setTimeout(() => {
+                            typeText("text9", "Chad (chuckling nervously): I mean, at least he didn’t have to pay for another arcade card…", 60);
+                            setTimeout(() => {
+                                document.getElementById("text10").textContent = text10;
+                                setTimeout(() => {
+                                document.getElementById("text11").textContent = text11;
+                                setTimeout(() => {
+                        typeText("text12", "Ryan’s Ghost (grumbling): You guys really messed this one up, huh? You didn’t even try to save me. This whole funeral… is your fault.", 50);
+                        setTimeout(() => {
+                                document.getElementById("text13").textContent = text13;
+                                setTimeout(() => {
+                                    document.getElementById("restart-container").style.visibility = "visible";
+                    }, 5000);
+                }, 5000);
+                }, 5000);
+        }, 5000);
+    }, 5000);
+            }, 5000);
+        }, 5000);
+    }, 5000);
+}, 5000);
+}, 5000);
+}, 5000);
+}, 5000); }, 5000);
+
+         
+        }, 1000);
+    }
+        window.onload = displayText;
+        </script>
+        
+    </body>
+</html>

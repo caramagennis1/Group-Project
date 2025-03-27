@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Arcadia</title>
+    <link rel="stylesheet" href="css/ArcadiaCSS.css">
+</head>
+<body class="Car-image">
+    <button class="back-button" onclick="window.location.href='Menu.html'">X</button>
+
+    <div id="Text-container" class="Text-container">
+        <p id="text1"></p>
+        <p id="text2"></p>
+        <p id="text3"></p>
+        <p id="text4"></p>
+        <p id="text5"></p>
+        <p id="text6"></p>
+        <p id="text7"></p>
+        <p id="text8"></p>
+        <p id="text9"></p>
+        <p id="text10"></p>
+        <p id="text11"></p>
+        <p id="text12"></p>
+        <p id="text13"></p>
+        <p id="text14"></p>
+        <p id="text15"></p>
+        <p id="text16"></p>
+        <p id="text17"></p>
+        <p id="text18"></p>
+        <p id="text19"></p>
+        <p id="text20"></p>
+        <p id="text21"></p>
+        <p id="text22"></p>
+        <p id="text23"></p>
+        <p id="text24"></p>
+        <p id="text25"></p>
+        <p id="text26"></p>
+        <p id="text27"></p>
+        <p id="text28"></p>
+        <p id="text29"></p>
+        <p id="text30"></p>
+        <p id="text31"></p>
+
+        <div id="button-container" class="button-container" style="visibility: hidden;">
+            <button id="Comfort" class="option1-button" onclick="window.location.href='Comfort.html'">Comfort Her</button>
+            <button id="Kiss" class="option1-button" onclick="window.location.href='Kiss.html'">Kiss Her</button>
+            <button id="Slap" class="option1-button" onclick="window.location.href='Slap.html'">Slap Her</button>
+        </div>
+    </div>
+
+    <script>
+        function typeText(elementId, text, delay = 50) {
+            let i = 0;
+            function typing() {
+                if (i < text.length) {
+                    document.getElementById(elementId).innerHTML += text[i];
+                    i++;
+                    setTimeout(typing, delay);
+                }
+            }
+            typing();
+        }
+
+        function displayInstantText(elementId, text, delay = 2000) {
+            setTimeout(() => {
+                document.getElementById(elementId).textContent = text;
+            }, delay);
+        }
+
+        function startTextSequence() {
+            displayInstantText("text1", "You make a quick decision and swerve in front of Ryan, pushing him out of the way just in time. The car screeches to a halt, and you breathe a sigh of relief.");
+            setTimeout(() => {
+                typeText("text2", "Ryan: Oh my gosh, that was… I didn’t even see the car! Thank you!", 50);
+                setTimeout(() => {
+                    typeText("text3", "Tiffany (laughing): Yeah, maybe get your glasses checked.", 50);
+                    setTimeout(() => {
+                        typeText("text4", "Sam (whispering): Close call… but it wasn’t your time yet, Ryan.", 50);
+                        setTimeout(() => {
+                            typeText("text5", "Chad (muttering): Should’ve let it hit him…", 50);
+                            setTimeout(() => {
+                                displayInstantText("text6", "You all continue on to the arcade, though the tension from Ryan’s near accident lingers.");
+                                setTimeout(() => {
+                                    document.body.classList.remove("Car-image");
+                                    document.body.classList.add("Arcadia-image");
+                                    displayInstantText("text7", "The arcade feels... different. The neon lights flicker strangely, and the air smells oddly stale.");
+                                    setTimeout(() => {
+                                        typeText("text8", "Chad: Alright! Let’s play some games before it gets too weird in here.", 50);
+                                        setTimeout(() => {
+                                            typeText("text9", "Tiffany: Ugh, this place feels... off today. You think they forgot to pay the electricity bill?", 50);
+                                            setTimeout(() => {
+                                                typeText("text10", "Sam (eyeing the machines): It’s more than just the lights. Something’s... wrong.", 50);
+                                                setTimeout(() => {
+                                                    typeText("text11", "User: Stop, you guys are scaring me.", 50);
+                                                    setTimeout(() => {
+                                                        displayInstantText("text12", "You spot a brand-new machine in the corner: 'Arcadia'—red and black, glowing ominously.");
+                                                        setTimeout(() => {
+                                                            typeText("text13", "Tiffany: I’ve never seen this game before. What the hell?", 50);
+                                                            setTimeout(() => {
+                                                                typeText("text14", "Chad: Whatever, I’m not playing it. I’ve got a Pac-Man high score to maintain.", 50);
+                                                                setTimeout(() => {
+                                                                    displayInstantText("text15", "Despite the unease, something pulls you toward the machine.");
+                                                                    setTimeout(() => {
+                                                                        typeText("text16", "Chad (spinning a token): What the heck? This is insane...", 50);
+                                                                        setTimeout(() => {
+                                                                            typeText("text17", "Tiffany (hesitant): It’s just a game, right?", 50);
+                                                                            setTimeout(() => {
+                                                                                displayInstantText("text18", "Before anyone can stop you, you press the red button.");
+                                                                                setTimeout(() => {
+                                                                                    typeText("text19", "Chad (panicking): Whoa! What just happened?", 50);
+                                                                                    setTimeout(() => {
+                                                                                        typeText("text20", "Tiffany (screaming): This isn’t funny! I can’t see anything!", 50);
+                                                                                        setTimeout(() => {
+                                                                                            typeText("text21", "User: I-I thought it was just a game!", 50);
+                                                                                            setTimeout(() => {
+                                                                                                displayInstantText("text22", "A deep, maniacal laugh echoes through the arcade. A thick fog pours from the machine.");
+                                                                                                setTimeout(() => {
+                                                                                                    typeText("text23", "??? (high-pitched voice): Remember when you kicked me in the street, (user)?", 50);
+                                                                                                    setTimeout(() => {
+                                                                                                        typeText("text24", "User: S-Sparkles?! I tripped! It was an accident!", 50);
+                                                                                                        setTimeout(() => {
+                                                                                                            typeText("text25", "Tiffany (crying): I don’t want to be here...", 50);
+                                                                                                            setTimeout(() => {
+                                                                                                                displayInstantText("text26", "The arcade doors slam shut with a deafening bang.");
+                                                                                                                setTimeout(() => {
+                                                                                                                    typeText("text27", "Chad (yelling): This isn’t real! Let me out!", 50);
+                                                                                                                    setTimeout(() => {
+                                                                                                                        typeText("text28", "Sam (calmly): The only way out is to finish his game. We play, or we die.", 50);
+                                                                                                                        setTimeout(() => {
+                                                                                                                            typeText("text29", "Tiffany (sobbing): What are we supposed to do?!", 50);
+                                                                                                                            setTimeout(() => {
+                                                                                                                                document.getElementById("button-container").style.visibility = "visible";
+                                                                                                                            }, 2000);
+                                                                                                                        }, 3000);
+                                                                                                                    }, 3000);
+                                                                                                                }, 3000);
+                                                                                                            }, 3000);
+                                                                                                        }, 3000);
+                                                                                                    }, 3000);
+                                                                                                }, 3000);
+                                                                                            }, 3000);
+                                                                                        }, 3000);
+                                                                                    }, 3000);
+                                                                                }, 3000);
+                                                                            }, 3000);
+                                                                        }, 3000);
+                                                                    }, 3000);
+                                                                }, 3000);
+                                                            }, 3000);
+                                                        }, 3000);
+                                                    }, 3000);
+                                                }, 3000);
+                                            }, 3000);
+                                        }, 3000);
+                                    }, 3000);
+                                }, 3000);
+                            }, 3000);
+                        }, 3000);
+                    }, 3000);
+                }, 3000);
+            }, 3000);
+        }
+
+        window.onload = startTextSequence;
+    </script>
+</body>
+</html>

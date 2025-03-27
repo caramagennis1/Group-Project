@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset = "UTF-8">
+        <meta name = "viewport" content = "width=device-width,initial-scale=1.0">
+        <title>Arcadia</title>
+        <link rel="stylesheet" href="css/ArcadiaCSS.css">
+    </head>
+    <body class="Arcadia-image">
+        <button class="back-button" onclick="window.location.href='Menu.html'">X</button>
+
+        <div id="Text-container" class="Text-container">
+            <p id="text1"></p>
+            
+        <div class="restart-container" id="restart-container">
+                <a rel="next" href="Game.html">TRY AGAIN!</a>
+        </div>
+        </div>
+
+        <script>
+        const text1 = "A weird tension hangs in the air, and in a strange moment of fear, you lean in and kiss her. The kiss is awkward, but it's a strange comfort in the chaos. You realise it’s love and float off into the sky and get married #dip";
+
+        function displayText() {
+            setTimeout(() => {
+                document.getElementById("text1").textContent = text1;
+        }, 2000);
+            }
+
+        window.onload = displayText;
+        </script>
+        
+    </body>
+</html>

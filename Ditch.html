@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset = "UTF-8">
+        <meta name = "viewport" content = "width=device-width,initial-scale=1.0">
+        <title>Arcadia</title>
+        <link rel="stylesheet" href="css/ArcadiaCSS.css">
+    </head>
+    <body class="Arcadia-image">
+        <button class="back-button" onclick="window.location.href='Menu.html'">X</button>
+
+        <div id="Text-container" class="Text-container">
+            <p id="text1"></p>
+            <p id="text2"></p>
+            <p id="text3"></p>
+            <p id="text4"></p>
+            
+            
+        </div>
+
+        <script>
+        const text1 = "The group silently rides to the arcade, but as soon as you walk in, the lights flicker, and the machines start glitching. Ryan’s angry ghost appears at the arcade’s entrance.";
+        const text3 = "The arcade doors slam shut, trapping you inside with Ryan’s vengeful spirit."
+        const text4 = "Ryan eats all your souls :p";
+        
+
+        function typeText(elementId, text, delay = 50) {
+            let i = 0;
+            function typing() {
+                if (i < text.length) {
+                    document.getElementById(elementId).innerHTML += text[i];
+                    i++;
+                    setTimeout(typing, delay);
+                }
+            }
+            typing();
+        }
+
+        function displayText() {
+                document.getElementById("text1").textContent = text1;
+                setTimeout(() => {
+                    typeText("text2", "Ryan’s Ghost (screaming): YOU LET ME DIE!!! NOW I HAUNT THIS PLACE FOREVER!", 50);
+                    setTimeout(() => {
+                        document.getElementById("text3").textContent = text3;
+                        setTimeout(() => {
+                            document.getElementById("text4").textContent = text4;
+                            setTimeout(() => {
+                }, 5000);
+        }, 5000);
+    }, 5000);
+}, 5000);
+        }
+        window.onload = displayText;
+        </script>
+        
+    </body>
+</html>

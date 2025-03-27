@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset = "UTF-8">
+        <meta name = "viewport" content = "width=device-width,initial-scale=1.0">
+        <title>Arcadia</title>
+        <link rel="stylesheet" href="css/ArcadiaCSS.css">
+    </head>
+    <body class="Background-image">
+        <button class="back-button" onclick="window.location.href='Menu.html'">X</button>
+        
+        <div id="Text-container" class="Text-container">
+            <p id="text1"></p>
+            <p id="text2"></p>
+        
+        <div id="button-container" class="button-container">
+            <button id="Diner" class="option1-button" onclick="window.location.href='Diner.html'">Work in The Diner</button>
+            <button id="Summer School" class="option1-button" onclick="window.location.href='Summer School.html'">Go to Summer School</button>
+            <button id="Classroom" class="option1-button" onclick="window.location.href='Friends.html'">Hangout with Freinds</button>
+        </div>
+        </div>
+
+        <script>
+        const text1 = "You’re walking down the hallway of your high school, surrounded by the sounds of clunky lockers slamming closed. The smell of cafeteria pizza is in the air, it's the last day of school before summer.";
+        const text2 = "Making it to your last class of the day, English, boke. You sit along with your best friends at the back of class, everyone is discussing their plans for the summer and suddenly the question is being asked to you. What are you up to?";
+
+        function displayText() {
+            setTimeout(() => {
+                document.getElementById("text1").textContent = text1;
+                setTimeout(() => {
+                    document.getElementById("text2").textContent = text2;
+                    setTimeout(() => {
+                        document.getElementById("button-container").style.visibility = "visible";
+                    }, 2000);
+                }, 2000);
+            }, 1000);
+         
+        }
+        window.onload = displayText;
+        </script>
+
+
+        
+        
+    </body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset = "UTF-8">
+        <meta name = "viewport" content = "width=device-width,initial-scale=1.0">
+        <title>Arcadia</title>
+        <link rel="stylesheet" href="css/ArcadiaCSS.css">
+    </head>
+    <body class="Car-image">
+        <button class="back-button" onclick="window.location.href='Menu.html'">X</button>
+
+        <div id="Text-container" class="Text-container">
+            <p id="text1"></p>
+            <p id="text2"></p>
+            <p id="text3"></p>
+            <p id="text4"></p>
+
+            <div id="button-container" class="button-container">
+                <button id="RyanFuneral" class="option3-button" onclick="window.location.href='Funeral.html'">Go to the Funeral</button>
+                <button id="RyanDitch" class="option3-button" onclick="window.location.href='Ditch.html'">Ditch him and go to the arcade</button>
+            </div>
+        </div>
+
+        <script>
+        const text1 = "As the car speeds around the corner, you freeze, watching the inevitable happen. Ryan’s body  splats on the car. Everyone is silent for a minute.";
+       
+        function typeText(elementId, text, delay = 50) {
+            let i = 0;
+            function typing() {
+                if (i < text.length) {
+                    document.getElementById(elementId).innerHTML += text[i];
+                    i++;
+                    setTimeout(typing, delay);
+                }
+            }
+            typing();
+        }
+
+        function displayText() {
+            setTimeout(() => {
+                document.getElementById("text1").textContent = text1;
+                setTimeout(() => {
+                    document.body.classList.remove("Car-image");
+                    document.body.classList.add("Ryan-image");
+                    typeText("text2", "Tiffany (shocked, gasping): Oh my god… Did that really just happen?!", 50);
+                    setTimeout(() => {
+                        typeText("text3", "Chad (looking away): Uh, well… I didn’t really think he’d actually get hit...", 50);
+                        setTimeout(() => {
+                            typeText("text4", "Sam (stoic, not reacting): Wow (user) I didn't think you would let him die like that.", 60);
+                            setTimeout(() => {
+                            document.getElementById("button-container").style.visibility = "visible";
+                        }, 6000);
+                    }, 6000);
+                }, 5000);
+            }, 5000);
+         
+        }, 1000);
+    }
+        window.onload = displayText;
+        </script>
+        
+    </body>
+</html>

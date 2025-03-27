@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset = "UTF-8">
+        <meta name = "viewport" content = "width=device-width,initial-scale=1.0">
+        <title>Arcadia</title>
+        <link rel="stylesheet" href="css/ArcadiaCSS.css">
+    </head>
+    <body class="Arcadia-image">
+        <button class="back-button" onclick="window.location.href='Menu.html'">X</button>
+
+        <div id="Text-container" class="Text-container">
+            <p id="text1"></p>
+            <p id="text2"></p>
+            <p id="text3"></p>
+            <p id="text4"></p>
+            <p id="text5"></p>
+            <p id="text6"></p>
+            <p id="text7"></p>
+            
+
+            <div id="question-container" class="question-container">
+                <h2>I’m not alive, but I can grow. I don’t have lungs, but I need air. I don’t have a mouth, but water kills me. What am I?</h2>
+                <form id="quiz-form">
+                    <input type="radio" name="answer" value="Fire"> Fire<br>
+                    <input type="radio" name="answer" value="Plant"> Plant<br>
+                    <input type="radio" name="answer" value="Cloud"> Cloud<br>
+                    <button type="button" onclick="checkAnswer()">Submit</button>
+                </form>
+                <p id="result"></p>
+            </div> 
+            <p id="text8"></p>
+            <p id="text9"></p>
+            <h1 id="text10"></h1>
+
+            <div id="Inventory-container" class="Inventory-container">
+                <h3>Inventory</h3>
+                <h1 id="text11"></h1>
+                <h1 id="text12"></h1>
+            </div>
+
+            <p id="text13"></p>
+            <p id="text14"></p>
+            <p id="text15"></p>
+            <p id="text16"></p>
+            <p id="text17"></p>
+            <p id="text18"></p>
+
+            <div id="question2-container" class="question-container">
+                <h2>Which of the following was a popular TV show in the late 70s that featured a group of teenagers solving mysteries?</h2>
+                <form id="quiz-form">
+                    <input type="radio" name="answer" value="A"> A: Scooby-Doo, Where Are You!<br>
+                    <input type="radio" name="answer" value="B"> B: The Dukes of Hazzard<br>
+                    <input type="radio" name="answer" value="C"> C: Happy Days<br>
+                    <button type="button" onclick="checkAnswer2()">Submit</button>
+                </form>
+                <p id="result"></p>
+            </div> 
+
+            <div id="question3-container" class="question-container">
+                <h2>Which 70s band had a hit song with “Stayin' Alive,” a song that became synonymous with disco culture?</h2>
+                <form id="quiz-form">
+                    <input type="radio" name="answer" value="A"> A: ABBA<br>
+                    <input type="radio" name="answer" value="B"> B: The Bee Gees<br>
+                    <input type="radio" name="answer" value="C"> C: KC and the Sunshine Band<br>
+                    <button type="button" onclick="checkAnswer3()">Submit</button>
+                </form>
+                <p id="result"></p>
+            </div> 
+
+            <div id="question4-container" class="question-container">
+                <h2>In 1977, which groundbreaking science fiction film was released, becoming a massive cultural phenomenon?</h2>
+                <form id="quiz-form">
+                    <input type="radio" name="answer" value="A"> A: The Empire Strikes Back<br>
+                    <input type="radio" name="answer" value="B"> B: Close Encounters od the Third King<br>
+                    <input type="radio" name="answer" value="C"> C: Star Wars: A New Hope<br>
+                    <button type="button" onclick="checkAnswer4()">Submit</button>
+                </form>
+                <p id="result"></p>
+            </div> 
+
+            <p id="text19"></p>
+            <p id="text20"></p>
+
+            <div id="Inventory" class="Inventory-container">
+            <h1>Choose an Item</h1>
+
+            <div id="item-selection">
+            <button onclick="collectItem('Lollipop')">Lollipop🍭</button>
+            <button onclick="collectItem('Key')">Key🔑</button>
+            </div>
+
+            <h2>Your Inventory:</h2>
+            <ul id="inventory-list" class="inventory">
+            <li id="empty-message">No items collected.</li>
+            </ul>
+            </div>
+
+        </div>
+
+
+        <script>
+        const text1 = "You slap her in an attempt to snap her out of it. ";
+        const text2 = "We need to focus, okay?";
+        const text3 = "(Tiffany stumbles back, shocked and hurt. You immediately regret it, but you can’t take it back now.)";
+        const text4 = "The room feels like it’s closing in, the eerie fog thickening with every passing second. You realize that to escape, you’ll have to face whatever game evil ghost dog has set up for you. And the first test is just beginning.";
+        const text6 = "The group nervously watches as the arcade machines flicker to life on their own. The atmosphere is tense, and the arcade feels like a dangerous, twisted version of itself. Then, a message flashes on the screen of every game in the room.";
+        const text7 = "To escape, solve the riddle. Find the first note to unlock your path.";
+        const text9 = "You all stumble to the machine in the dim lighting. At the bottom of the machine where the opening is there’s a note, ‘open me’. Inside you find a note taped to a flashlight. The note reads:";
+        const text10 = "Think back to being a baby, UNLOCK the basics when it was all A.B.C’s and RAINBOWS, those times were much easier";
+        const text11 ="🔦";
+        const text12 ="📝";
+        const text17 ="Before anyone can respond, a trivia machine at the center of the room lights up with a loud 'ding!' Sparkles’ voice booms from the machine.";
+        const text20 ="Choose your prize. Will you select a lollipop or key?";
+
+
+        function typeText(elementId, text, delay = 50) {
+            let i = 0;
+            function typing() {
+                if (i < text.length) {
+                    document.getElementById(elementId).innerHTML += text[i];
+                    i++;
+                    setTimeout(typing, delay);
+                }
+            }
+            typing();
+        }
+
+        function displayText() {
+                document.getElementById("text1").textContent = text1;
+                setTimeout(() => {
+                    document.getElementById("text2").textContent = text2;
+                    setTimeout(() => {
+                        document.getElementById("text3").textContent = text3;
+                        setTimeout(() => {
+                            document.getElementById("text4").textContent = text4;
+                            setTimeout(() => {
+                                typeText("text5", "Sparkles: Foolish humans. The arcade... is mine now. I’ve taken control of your game. Now, you’ll play by my rules.", 50);
+                        setTimeout(() => {
+                            document.body.classList.remove("Arcadia-image");
+                            document.body.classList.add("ArcadeScreen-image");
+                            document.getElementById("text6").textContent = text6;
+                            setTimeout(() => {
+                                document.getElementById("text7").textContent = text7;
+                            setTimeout(() => {
+    let questionContainer = document.getElementById("question-container");
+    if (questionContainer) {
+        console.log("Showing question-container now..."); // Debugging log
+        questionContainer.style.display = "block"; 
+    } else {
+        console.error("ERROR: question-container NOT found!");
+    }
+    setTimeout(() => {
+        typeText("text8", "Sparkles: Fine, there’s something you could probably find over by the vending machine", 50);
+        setTimeout(() => {
+            document.getElementById("text9").textContent = text9;
+            setTimeout(() => {
+            document.getElementById("text10").textContent = text10;
+            setTimeout(() => {
+            document.getElementById("Inventory-container").style.visibility = "visible";
+            document.getElementById("text11").textContent = text11;
+            document.getElementById("text12").textContent = text12;
+            setTimeout(() => {
+            typeText("text13", "User: What the hell does this mean?", 50);
+            setTimeout(() => {
+                typeText("text14", "Ryan: I have no clue", 50);
+                setTimeout(() => {
+                    typeText("text15", "Tiffany: Why is this ugly dog making us go on a wild goose chase?", 50);
+                    setTimeout(() => {
+                        typeText("text16", "Chad (nervously):This dog just took over an entire arcade, I know I’m not messing with him, are you guys?", 50);
+                        setTimeout(() => {
+                            document.getElementById("text17").textContent = text17;
+                            setTimeout(() => {
+                                typeText("text18", "Sparkles (laughing maniacally): Don’t doubt me Chad your hairline is already receding. Welcome to my game. Answer correctly, and you will earn points. These you can use to buy your escape. Answer incorrectly, and you will suffer. Let’s begin!", 50);
+                                setTimeout(() => {
+    let questionContainer = document.getElementById("question2-container");
+    if (questionContainer) {
+        console.log("Showing question-container now..."); // Debugging log
+        questionContainer.style.display = "block"; 
+    } else {
+        console.error("ERROR: question-container NOT found!");
+    }
+    setTimeout(() => {
+    let questionContainer = document.getElementById("question3-container");
+    if (questionContainer) {
+        console.log("Showing question-container now..."); // Debugging log
+        questionContainer.style.display = "block"; 
+    } else {
+        console.error("ERROR: question-container NOT found!");
+    }
+    setTimeout(() => {
+    let questionContainer = document.getElementById("question4-container");
+    if (questionContainer) {
+        console.log("Showing question-container now..."); // Debugging log
+        questionContainer.style.display = "block"; 
+    } else {
+        console.error("ERROR: question-container NOT found!");
+    }
+    setTimeout(() => {
+        typeText("text19", "Sparkles (growling): You may have gotten lucky, but your time is running out. Choose wisely.", 50);
+        setTimeout(() => {
+                            document.getElementById("text20").textContent = text20;
+                            document.getElementById("Inventory").style.visibility = "visible";
+    }, 5000);   
+    }, 5000);   
+}, 5000);   
+}, 5000);            
+    }, 5000);
+}, 5000);   
+    }, 5000);            
+    }, 5000);
+}, 5000);
+}, 5000);
+}, 5000);
+}, 5000);   
+    }, 5000);            
+    }, 5000);
+}, 5000);
+}, 5000);
+}, 5000);
+        }, 5000);
+    }, 5000);
+}, 5000);
+}, 5000);
+}, 5000);
+        }
+        window.onload = displayText;
+
+        function checkAnswer() {
+            const correctAnswer = "fire";
+            let selectedAnswer = document.querySelector('input[name="answer"]:checked');
+
+            if (!selectedAnswer){
+                document.getElementById("result").innerHTML = "Please select an answer!";
+                return;
+            }
+
+            if (selectedAnswer.value === correctAnswer){
+                document.getElementById("result").innerHTML = "Correct";
+            } else{
+                document.getElementById("result").innerHTML = "Wrong, you lose a life.";
+            }
+        }
+
+        function checkAnswer2() {
+            const correctAnswer = "A";
+            let selectedAnswer = document.querySelector('input[name="answer"]:checked');
+
+            if (!selectedAnswer){
+                document.getElementById("result").innerHTML = "Please select an answer!";
+                return;
+            }
+
+            if (selectedAnswer.value === correctAnswer){
+                document.getElementById("result").innerHTML = "Correct";
+            } else{
+                document.getElementById("result").innerHTML = "Wrong, you lose a life.";
+            }
+        }
+
+        function checkAnswer3() {
+            const correctAnswer = "B";
+            let selectedAnswer = document.querySelector('input[name="answer"]:checked');
+
+            if (!selectedAnswer){
+                document.getElementById("result").innerHTML = "Please select an answer!";
+                return;
+            }
+
+            if (selectedAnswer.value === correctAnswer){
+                document.getElementById("result").innerHTML = "Correct";
+            } else{
+                document.getElementById("result").innerHTML = "Wrong, you lose a life.";
+            }
+        }
+        
+        function checkAnswer4() {
+            const correctAnswer = "C";
+            let selectedAnswer = document.querySelector('input[name="answer"]:checked');
+
+            if (!selectedAnswer){
+                document.getElementById("result").innerHTML = "Please select an answer!";
+                return;
+            }
+
+            if (selectedAnswer.value === correctAnswer){
+                document.getElementById("result").innerHTML = "Correct";
+            } else{
+                document.getElementById("result").innerHTML = "Wrong, you lose a life.";
+            }
+        }
+
+        function collectItem(item) {
+            let inventoryList = document.getElementById("inventory-list");
+            let emptyMessage = document.getElementById("empty-message");
+
+            if (emptyMessage) {
+                emptyMessage.remove();
+            }
+
+            document.getElementById("item-selection").classList.add("hidden");
+
+            let listItem = document.createElement("li");
+            listItem.textContent = item;
+            inventoryList.appendChild(listItem);
+        }
+
+        </script>
+        
+    </body>
+</html>

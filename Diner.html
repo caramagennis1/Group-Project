@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset = "UTF-8">
+        <meta name = "viewport" content = "width=device-width,initial-scale=1.0">
+        <title>Arcadia</title>
+        <link rel="stylesheet" href="css/ArcadiaCSS.css">
+    </head>
+    <body class="Diner-image">
+        <button class="back-button" onclick="window.location.href='Menu.html'">X</button>
+
+        <div id="Text-container" class="Text-container">
+            <p id="text1"></p>
+            <p id="text2"></p>
+            <p id="text3"></p>
+            <h2 id="text4"></h2>
+        <div class="restart-container" id="restart-container">
+                <a rel="next" href="Game.html">TRY AGAIN!</a>
+        </div>
+        </div>
+
+        <script>
+        const text1 = "After a long summer of working at the local diner, tonight’s your final shift. You’ve pretty much got the hang of it now. You’ve been flipping burgers, taking orders, and dodging the regulars’ weird requests all summer. Hell, you’re practically in charge tonight. You just baked a fresh pie, golden and perfect, and the smell fills the air like a sweet victory.";
+        const text2 = "But then... your eyelids start to get heavy, probably from the 12 cups of coffee you’ve drank just to survive this shift. You start to doze off, dreaming of the moment you can finally clock out. In your exhaustion, you forget one tiny, tiny detail. Turning off the stove.";
+        const text3 = "You were engulfed by flames.:("
+       
+        function displayText() {
+            setTimeout(() => {
+                document.getElementById("text1").textContent = text1;
+                setTimeout(() => {
+                    document.getElementById("text2").textContent = text2;
+                    setTimeout(() => {
+                        document.getElementById("text3").textContent = text3;
+                        setTimeout(() => {
+                            document.getElementById("restart-container").style.visibility = "visible";
+                        }, 2000);
+                    }, 3000);
+                }, 3000);
+            }, 1000);
+         
+        }
+        window.onload = displayText;
+        </script>
+        
+    </body>
+</html>

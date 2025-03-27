@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset = "UTF-8">
+        <meta name = "viewport" content = "width=device-width,initial-scale=1.0">
+        <title>Arcadia</title>
+        <link rel="stylesheet" href="css/ArcadiaCSS.css">
+    </head>
+    <body class="SummerSchool-image">
+        <button class="back-button" onclick="window.location.href='Menu.html'">X</button>
+        
+        <div id="Text-container" class="Text-container">
+            <p id="text1"></p>
+            <h2 id="text2"></h2>
+            <h2 id="text3"></h2>
+            <p id="text4"></p>
+            <p id="text5"></p>
+        <div class="restart-container" id="restart-container">
+                <a rel="next" href="Game.html">TRY AGAIN!</a>
+        </div>
+        </div>
+
+        <script>
+        const text1 = "You made the bold decision to sign up for summer school.'I’ll totally redeem myself this time,'' you told yourself, like every teenager does when they’re drowning in an ocean of textbooks and bad decisions. But summer school is a cruel joke. You spent more time trying to figure out how to sneak snacks past the teacher than actually studying. The result? ";
+        const text2 = "You Failed.";
+        const text3 = "Hard.";
+        const text4 = "So, instead of soaking up the summer sun, you’re now living on the streets with nothing but your Walkman, some leftover pizza crusts, and shame.";
+        const text5 = "In the end, you died, not from the streets, but from the sheer embarrassment of your terrible life choices.";
+
+        function displayText() {
+            setTimeout(() => {
+                document.getElementById("text1").textContent = text1;
+                setTimeout(() => {
+                    document.getElementById("text2").textContent = text2;
+                    setTimeout(() => {
+                        document.getElementById("text3").textContent = text3;
+                    setTimeout(() => {
+                        document.body.classList.remove("SummerSchool-image");
+                        document.body.classList.add("Homeless-image");
+                        document.getElementById("text4").textContent = text4;
+                        setTimeout(() => {
+                            document.getElementById("text5").textContent = text5;
+                        setTimeout(() => {
+                            document.getElementById("restart-container").style.visibility = "visible";
+                                 }, 2000);
+                             }, 3000);
+                        }, 2000);
+                    }, 3000);
+                }, 3000);
+            }, 1000);
+         
+        }
+        window.onload = displayText;
+        </script>
+        
+    </body>
+</html>

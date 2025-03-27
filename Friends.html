@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset = "UTF-8">
+        <meta name = "viewport" content = "width=device-width,initial-scale=1.0">
+        <title>Arcadia</title>
+        <link rel="stylesheet" href="css/ArcadiaCSS.css">
+    </head>
+    <body class="Background-image">
+        <button class="back-button" onclick="window.location.href='Menu.html'">X</button>
+
+        <div id="Text-container" class="Text-container">
+            <p id="text1"></p>
+            <p id="text2"></p>
+            <p id="text3"></p>
+            <p id="text4"></p>
+            <p id="text5"></p>
+            <p id="text6"></p>
+            <p id="text7"></p>
+            <p id="text8"></p>
+            <p id="text9"></p>
+            <p id="text10"></p>
+            <p id="text11"></p>
+            <p id="text12"></p>
+            <p id="text13"></p>
+            <p id="text14"></p>
+            <p id="text15"></p>
+            <p id="text16"></p>
+            <p id="text17"></p>
+        <div class="restart-container" id="restart-container">
+                <a rel="next" href="Game.html">TRY AGAIN!</a>
+        </div>
+
+        <div id="button-container" class="button-container">
+            <button id="RyanSave" class="option2-button" onclick="window.location.href='ArcadeL2.html'">Save Him</button>
+            <button id="RyanDead" class="option2-button" onclick="window.location.href='Dead.html'">Leave Him</button>
+        </div>
+
+        </div>
+
+        <script>
+            const text4 = "As a group you all agree to go to the arcade";
+            const text6 = "He flexes dramatically, making Ryan roll his eyes."
+            const text10 = "They all mount their bikes and start heading down the street, the wind blowing through their hair.";
+            const text15 = "The group starts riding, with Chad and Tiffany leading, while you, Sam and Ryan fall behind. Suddenly, as they near an intersection, a car speeds around the corner barrelling towards Ryan, who’s still trying to adjust his helmet.";
+            const text16 = "The moment of truth:";
+            const text17 = "There’s a choice now. Will you save Ryan from the oncoming car, or let him meet an unfortunate fate?";
+
+
+            function typeText(elementId, text, delay = 50) {
+            let i = 0;
+            function typing() {
+                if (i < text.length) {
+                    document.getElementById(elementId).innerHTML += text[i];
+                    i++;
+                    setTimeout(typing, delay);
+                }
+            }
+            typing();
+        }
+
+        typeText("text1", "Tiffany: I'm so glad for us to hangout all summer!", 50); 
+        setTimeout(() => {
+            typeText("text2", "Chad: Yea it’ll be chill", 50);
+            setTimeout(() => {
+                typeText("text3", "Ryan: Do you guys wanna hit the arcade after school?", 50);
+                setTimeout(() => {
+                    document.getElementById("text4").textContent = text4;
+                    setTimeout(() => {
+                        document.body.classList.remove("Background-image");
+                        document.body.classList.add("SummerSchool-image");
+                        typeText("text5", "Tiffany: Ugh, I can't believe we're actually going to the arcade. Are we seriously still doing this?", 50);
+                        setTimeout(() => {
+                        typeText("text6", "Chad: Are you kidding? It’s the only place I can actually beat people in a competition without breaking a sweat.", 50);
+                        setTimeout(() => {
+                            document.getElementById("text6").textContent = text6;
+                            setTimeout(() => {
+                                typeText("text7", "Ryan: I-I’m actually kinda excited. They just got a new pacman machine, that old one has been broken for ages.", 50);
+                                setTimeout(() => {
+                                    typeText("text8", "Sam: Just don’t get too distracted by your shiny machines, Ryan. We're here for fun, not… whatever that is..", 50);
+                                    setTimeout(() => {
+                                        typeText("text9", "Chad: Just don't trip over your own drooling mouth, nerd.", 50);
+                                        setTimeout(() => {
+                                            document.getElementById("text10").textContent = text10;
+                                            setTimeout(()=>{
+                                            typeText("text11", "Ryan (pulling on a helmet, looking unsure): Uh... I’m not really sure about this helmet... Do I really need it?", 50);
+                                             setTimeout(() => {
+                                                typeText("text12", "Sam (rolling his eyes): No one’s gonna take you seriously if you wear that thing.", 50);
+                                                setTimeout(() => {
+                                                    typeText("text13", "Tiffany (mocking): Yeah, come on, Ryan. It’s not like you’re riding a motorbike", 50);
+                                             setTimeout(() => {
+                                                typeText("text14", "Ryan (hesitant, but still putting the helmet on): I just feel safer this way, okay?", 50);
+                                                setTimeout(() => {
+                                                    document.body.classList.remove("SummerSchool-image");
+                                                    document.body.classList.add("Car-image");
+                                                    document.getElementById("text15").textContent = text15;
+                                                    setTimeout(() => {
+                                                        document.getElementById("text16").textContent = text16;
+                                                        setTimeout(() => {
+                                                            document.getElementById("text17").textContent = text17;
+                                                            setTimeout(() => {
+                                                                document.getElementById("button-container").style.visibility = "visible";
+                                                                }, 4000);
+                                                        }, 5000);
+                                                    }, 5000);
+                                                }, 5000);
+                                            }, 5000);
+                                        }, 5000);
+                                    }, 5000);
+                                }, 5000);
+                                            }, 5000);
+                                        }, 5000);
+                                    }, 5000);
+                                }, 5000);
+                            }, 5000);
+                        }, 5000);
+                    }, 5000);
+                }, 4000);
+            }, 3000);
+        }, 4000);
+    
+        window.onload = displayText;
+        </script>
+
+
+        
+        
+    </body>
+</html>
